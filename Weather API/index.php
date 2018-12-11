@@ -16,7 +16,7 @@ $error = "";
             
         } else {
             
-             $urlContents = file_get_contents("https://api.openweathermap.org/data/2.5/weather?q=".$city."&appid=[myAppId]");
+            $urlContents = file_get_contents("https://api.openweathermap.org/data/2.5/weather?q=".$city."&appid=[myAppId]");
 
             $weatherArray = json_decode($urlContents, true);
 
@@ -100,11 +100,12 @@ $error = "";
             
             <div class="form-group">
                 <label for="city"><p>Enter the name of a city</p></label>
-                <input type="text" class="form-control" id="city" name="city" placeholder="eg: New York" value="<?php   if(array_key_exists('city', $_GET)){
+                <input type="text" class="form-control" id="city" name="city" placeholder="eg: New York" 
+                       value="<?php if(array_key_exists('city', $_GET)){                                                                                                        
         
-                    echo $_GET['city'];
+                                        echo $_GET['city'];
                     
-                }; ?>">
+                                    }; ?>">
             </div>
             
             <button type="submit" class="btn btn-primary" id="submit">Submit</button>
